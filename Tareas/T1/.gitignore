@@ -1,0 +1,16 @@
+# --------------------------------------------
+# Python
+# --------------------------------------------
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.idea
+*.DS_STORE
+*Enunciado.pdf
+*utilidades.pyc
+*data/
+*tests_publicos
+*visualizaciones
+*README_inicial.md
