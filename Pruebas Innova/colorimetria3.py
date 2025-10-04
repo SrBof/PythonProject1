@@ -11,7 +11,7 @@ area_min_arandano = 12 # area minima del circulo pa ser considerado arandano
 circ_min_arandano = 0.75 # circularidad pa ser considerado arandano
 tamano_kernel = 5
 
-camara = cv2.VideoCapture("https//:192.100.124") #0 es camara de pc
+camara = cv2.VideoCapture(0) #0 es camara de pc
 if not camara.isOpened():
     raise RuntimeError("No se abrio la cámara gil.")
 
