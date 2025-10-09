@@ -1,0 +1,10 @@
+env/
+
+*.csv
+*.txt
+*.zip
+*.pyc
+*Enunciado.pdf
+*utilidades.pyc
+*data/
+*tests_publicos/
