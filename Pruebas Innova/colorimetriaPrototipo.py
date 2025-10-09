@@ -328,7 +328,7 @@ def main():
 
     cap.release()
     cv2.destroyAllWindows()
-    # Guardamos todo al salir, por si se nos pasó
+    # Guardado general
     guardar_csv(RUTA_CSV)
     guardar_mapa_calor(RUTA_HEATMAP)
 
