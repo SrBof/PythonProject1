@@ -1,0 +1,190 @@
+/* ------------------------------------------------ */
+/* 1. Estilos Globales y de Streamlit */
+/* ------------------------------------------------ */
+.stApp {
+    background-color: white;
+    color: black;
+}
+header { visibility: hidden; }
+#MainMenu { visibility: hidden; }
+
+/* Padding superior para que el contenido no quede debajo del header fijo */
+.block-container {
+    padding-top: 80px !important;
+}
+
+/* ------------------------------------------------ */
+/* 2. Estilo de la Barra de Navegación Superior */
+/* ------------------------------------------------ */
+/* Crea la barra de fondo fija */
+.custom-header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 30px 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+.logo-container img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Estilo del icono de perfil */
+.profile-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #7B68EE;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.user-info-text {
+    color: #4B0082;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+
+/* ------------------------------------------------ */
+/* 3. Estilo de las Tarjetas y Botones */
+/* ------------------------------------------------ */
+.content-card {
+    background-color: #F8F9FA;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.upload-area {
+    border: 2px dashed #CED4DA;
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Estilo de los Botones Gradiente (Analizar Archivo) */
+.grad-button-1 a, .grad-button-2 a {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.grad-button-1 a {
+    background: linear-gradient(135deg, #7B68EE, #4B0082);
+}
+.grad-button-2 a {
+    background: linear-gradient(135deg, #FF69B4, #FF007F);
+}
+
+/* ------------------------------------------------ */
+/* 4. SOLUCIÓN ALINEACIÓN HEADER: Posicionamiento Absoluto de Botones */
+/* ------------------------------------------------ */
+
+/* Contenedor funcional (El que tiene los botones 🔔 y ⚙️) */
+div[data-testid="stVerticalBlock"] > div:nth-child(1) {
+    position: absolute !important;
+    top: 15px !important;
+
+    /* VALOR CRÍTICO: Posiciona la fila horizontalmente (ajusta este valor si es necesario) */
+    right: 280px !important;
+
+    width: 150px;
+    z-index: 1001;
+    margin: 0 !important;
+}
+
+/* Estilo de los botones funcionales para que parezcan iconos */
+div[data-testid="stVerticalBlock"] > div:nth-child(1) button {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #6C757D !important;
+    padding: 0 5px;
+    font-size: 20px;
+    height: 35px;
+    margin-top: -10px;
+}
+div[data-testid="stVerticalBlock"] > div:nth-child(1) button:hover {
+    color: #4B0082 !important;
+}
+
+
+/* ------------------------------------------------ */
+/* 5. Traducción y Estilo del st.file_uploader */
+/* ------------------------------------------------ */
+
+/* Oculta el texto predeterminado en inglés del área de arrastre */
+div[data-testid="stFileUploaderDropzone"] p {
+    visibility: hidden;
+    height: 0px;
+}
+
+/* Oculta los botones "Browse files" y el texto de límite de tamaño */
+div[data-testid="stFileUploaderDropzone"] button {
+    visibility: hidden;
+    height: 0px;
+    padding: 0;
+}
+
+/* Restaura el contenedor de arrastre con el diseño dash y ajusta el tamaño */
+div[data-testid="stFileUploaderDropzone"] {
+    border: 2px dashed #CED4DA;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    min-height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Texto traducido: Se inyecta con pseudoelementos */
+div[data-testid="stFileUploaderDropzone"]::before {
+    content: "Haz clic para subir o arrastra el archivo";
+    color: #6C757D;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+div[data-testid="stFileUploaderDropzone"]::after {
+    content: "Límite: 200MB por archivo (CSV, MP4, JPG)";
+    color: #ADB5BD;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Oculta la etiqueta del widget (Ej: "Escoge o arrastra un archivo") */
+label[data-testid="stWidgetLabel"] {
+    visibility: hidden;
+    height: 0px;
+    margin: 0;
+}
+
+/* Ocultar el texto de estado del widget (Ej: "No file selected") */
+.st-emotion-cache-1c7v0w9 > div {
+    visibility: hidden;
+    height: 0px;
+}

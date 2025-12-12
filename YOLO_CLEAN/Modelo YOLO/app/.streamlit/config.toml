@@ -1,0 +1,11 @@
+[theme]
+# Fuerza el tema a ser claro
+base="light"
+backgroundColor="#FFFFFF"
+secondaryBackgroundColor="#F8F9FA"
+textColor="#343A40"
+primaryColor="#4B0082"
+
+[server]
+# Auto-run al guardar cambios
+runOnSave = true

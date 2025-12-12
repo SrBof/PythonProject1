@@ -13,7 +13,7 @@ cache: true
 device: cpu
 workers: 0
 project: runs/detect
-name: innova_colorimetria6
+name: 93epochs
 exist_ok: false
 pretrained: true
 optimizer: AdamW
