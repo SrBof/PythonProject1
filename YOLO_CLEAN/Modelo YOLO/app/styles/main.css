@@ -96,36 +96,40 @@ header { visibility: hidden; }
     background: linear-gradient(135deg, #FF69B4, #FF007F);
 }
 
-/* ------------------------------------------------ */
-/* 4. SOLUCIÓN ALINEACIÓN HEADER: Posicionamiento Absoluto de Botones */
-/* ------------------------------------------------ */
+.custom-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 
-/* Contenedor funcional (El que tiene los botones 🔔 y ⚙️) */
-div[data-testid="stVerticalBlock"] > div:nth-child(1) {
-    position: absolute !important;
-    top: 15px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    /* VALOR CRÍTICO: Posiciona la fila horizontalmente (ajusta este valor si es necesario) */
-    right: 280px !important;
-
-    width: 150px;
-    z-index: 1001;
-    margin: 0 !important;
+  background: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #E9ECEF;
 }
 
-/* Estilo de los botones funcionales para que parezcan iconos */
-div[data-testid="stVerticalBlock"] > div:nth-child(1) button {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    color: #6C757D !important;
-    padding: 0 5px;
-    font-size: 20px;
-    height: 35px;
-    margin-top: -10px;
+.header-menu-container{
+  display: flex;
+  align-items: center;
 }
-div[data-testid="stVerticalBlock"] > div:nth-child(1) button:hover {
-    color: #4B0082 !important;
+
+.fixed-functional-buttons{
+  display: flex;
+  align-items: center;
+  gap: 10px;              /* separación entre 🔔 y ⚙️ */
+}
+
+.user-info-text{
+  margin-left: 18px;      /* esto es exactamente “más a la derecha que los botones” */
+  white-space: nowrap;
+}
+
+.profile-icon{
+  margin-left: 10px;
 }
 
 
@@ -187,4 +191,16 @@ label[data-testid="stWidgetLabel"] {
 .st-emotion-cache-1c7v0w9 > div {
     visibility: hidden;
     height: 0px;
+}
+
+button[kind="primary"]{
+  background: linear-gradient(135deg, #7B68EE, #4B0082);
+  border: none;
+  height: 48px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+button[kind="primary"]:hover{
+  background: linear-gradient(135deg, #6A5ACD, #3F0071);
 }
